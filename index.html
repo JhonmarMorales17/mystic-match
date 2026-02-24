@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Match · El Recuerdo de los Elementos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Pantalla de Inicio -->
+        <div id="start-screen" class="start-screen active">
+            <div class="start-card">
+                <h1 class="game-title">MYSTIC MATCH</h1>
+                <p class="game-subtitle">El Recuerdo de los Elementos</p>
+                
+                <div class="input-group">
+                    <label for="player-name">Nombre del Jugador:</label>
+                    <input type="text" id="player-name" placeholder="Tu nombre" maxlength="20">
+                </div>
+
+                <div class="input-group">
+                    <label for="difficulty">Dificultad:</label>
+                    <select id="difficulty">
+                        <option value="easy">Fácil (4x4)</option>
+                        <option value="medium" selected>Intermedio (6x6)</option>
+                        <option value="hard">Difícil (8x8)</option>
+                    </select>
+                </div>
+
+                <button id="start-btn" class="btn-start">Iniciar Juego</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de Juego -->
+        <div id="game-screen" class="game-screen">
+            <div class="hud">
+                <div class="player-info">
+                    <span>Jugador:</span>
+                    <span id="player-name-display">---</span>
+                </div>
+                <div class="moves-info">
+                    <span>Movimientos:</span>
+                    <span id="moves-counter">0</span>
+                </div>
+                <button id="restart-btn" class="btn-restart">Reiniciar</button>
+            </div>
+
+            <div id="board" class="board"></div>
+        </div>
+
+        <!-- Modal de Victoria -->
+        <div id="victory-modal" class="victory-modal">
+            <div class="victory-content">
+                <h2>¡Victoria!</h2>
+                <p id="victory-message"></p>
+                <p id="victory-stats"></p>
+                <button id="play-again-btn" class="btn-victory">Jugar de Nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+:root {
+    --color-primary: #6c5ce7;
+    --color-dark: #2d3436;
+    --color-light: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Pantalla de Inicio */
+.start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.start-screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.start-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.game-title {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.btn-start {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+/* Pantalla de Juego */
+.game-screen {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.game-screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hud {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.board {
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem auto;
+}
+
+.card {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 100px;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Modal Victoria */
+.victory-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.victory-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.victory-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.btn-victory {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        max-width: 70px;
+        font-size: 1.5rem;
+    }
+}
