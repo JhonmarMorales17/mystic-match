@@ -18,5 +18,5 @@ Proyecto de juego de memoria para el curso de Desarrollo de Lenguajes para Clien
 Jhonmar de Jesus Morales Urdaneta
 
 ## Curso
-Desarrollo de Lenguajes para Clientes Web
+Lenguaje de Clientes Web
 Prof. Ing.Victor Kneider
