@@ -187,3 +187,125 @@ body {
         font-size: 1.5rem;
     }
 }
+
+/* Nuevos estilos para las cartas*/
+.card {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 100px;
+    background: transparent;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #6c5ce7, #a8e6cf);
+    transform: rotateY(0deg);
+    border: 2px solid white;
+    color: white;
+}
+
+.card-front {
+    background: white;
+    transform: rotateY(180deg);
+    border: 2px solid #6c5ce7;
+}
+
+.card.matched .card-front {
+    background: linear-gradient(135deg, #51cf66, #40c057);
+    border-color: #2b8c3e;
+}
+
+/* animaciones */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 10px #51cf66; }
+    50% { box-shadow: 0 0 20px #51cf66; }
+}
+
+.card.matched .card-inner {
+    animation: glow 1s ease-in-out;
+}
+
+/* Bloqueo del tablero */
+.board.blocked {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.board.blocked .card:not(.matched) {
+    filter: grayscale(0.5);
+}
+
+/* Mensajes de error */
+.error-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff6b6b;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1500;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    0% { transform: translate(-50%, -100%); }
+    100% { transform: translate(-50%, 0); }
+}
+
+/* Responsive mejorado */
+@media (max-width: 768px) {
+    .card {
+        max-width: 70px;
+    }
+    
+    .card-front, .card-back {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        max-width: 50px;
+    }
+    
+    .card-front, .card-back {
+        font-size: 1.4rem;
+    }
+}
