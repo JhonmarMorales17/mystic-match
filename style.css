@@ -121,24 +121,6 @@ body {
     margin: 2rem auto;
 }
 
-.card {
-    aspect-ratio: 1;
-    width: 100%;
-    max-width: 100px;
-    background: white;
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
 /* Modal Victoria */
 .victory-modal {
     position: fixed;
@@ -180,15 +162,7 @@ body {
     margin-top: 1rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .card {
-        max-width: 70px;
-        font-size: 1.5rem;
-    }
-}
-
-/* Nuevos estilos para las cartas*/
+/* ===== ESTILOS DE CARTAS CON EFECTO FLIP ===== */
 .card {
     aspect-ratio: 1;
     width: 100%;
@@ -243,7 +217,7 @@ body {
     border-color: #2b8c3e;
 }
 
-/* animaciones */
+/* Animaciones */
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
@@ -289,7 +263,7 @@ body {
     100% { transform: translate(-50%, 0); }
 }
 
-/* Responsive mejorado */
+/* Responsive */
 @media (max-width: 768px) {
     .card {
         max-width: 70px;

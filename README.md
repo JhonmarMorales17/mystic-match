@@ -1,4 +1,4 @@
-# MYSTIC MATCH: El Recuerdo de los Elementos / The Memory of the Elements
+# MYSTIC MATCH: El Recuerdo de los Elementos / The Memory of The Elements
 
 Version 1.0.0 | HTML5 | CSS3 | JavaScript
 
@@ -6,7 +6,7 @@ Version 1.0.0 | HTML5 | CSS3 | JavaScript
 
 ## Descripción del Proyecto
 
-Mystic Match es un juego de memoria interactivo que desarrollé como proyecto para el curso "Desarrollo de Lenguajes para Clientes Web" del Ing. Victor Kneider.
+Mystic Match es un juego de memoria interactivo que desarrollé como proyecto para el curso Desarrollo de Lenguajes para Clientes Web del Ing. Victor Kneider.
 
 El juego presenta una tematica mistica y elemental, donde los jugadores deben encontrar pares de elementos de la naturaleza y el cosmos mientras ponen a prueba su memoria y concentracion.
 
