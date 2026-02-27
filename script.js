@@ -12,7 +12,7 @@ const CONFIG = {
 //2.Son fácilmente reconocibles visualmente
 //3.Funcionan en todos los navegadores sin necesidad de imágenes externas
 //4.Dan personalidad al juego con temática mágica/mística
-//5.Son gratuitos y no requieren licencia
+//5.Son gratuitos y no requieren licencia 
 //6.Escalables: se ven bien en cualquier tamaño de pantalla
 const ELEMENTOS = [
     '🌟', '🌙', '⭐', '☀️', '🌍', '🌊', '🔥', '🌪️', 
@@ -33,7 +33,7 @@ let gameState = {
     timeoutId: null
 };
 
-//Elementos del DOM
+//elementos del DOM
 const startScreen = document.getElementById('start-screen');
 const gameScreen = document.getElementById('game-screen');
 const victoryModal = document.getElementById('victory-modal');
@@ -48,7 +48,7 @@ const board = document.getElementById('board');
 const victoryMessage = document.getElementById('victory-message');
 const victoryStats = document.getElementById('victory-stats');
 
-//-Funciones Utilitarias-
+//funciones utilitarias
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -81,7 +81,7 @@ function getDifficultyName() {
     return names[gameState.difficulty];
 }
 
-//Creacion del Tablero
+//creacion del tablero
 function createBoard(rows, cols) {
     board.innerHTML = '';
     board.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
@@ -112,7 +112,7 @@ function createBoard(rows, cols) {
     });
 }
 
-//-comparacion de cartas-
+//comparacion de cartas
 function compareCards() {
     const [card1, card2] = gameState.flippedCards;
     const element1 = card1.dataset.element;
@@ -180,14 +180,14 @@ function handleCardClick(card) {
     }
 }
 
-//-mostrar mensaje de victoria-
+//mostrar mensaje de victoria
 function showVictory() {
     victoryMessage.textContent = `¡Felicidades ${gameState.playerName}! Has completado el desafío.`;
     victoryStats.textContent = `Movimientos: ${gameState.moves} | Dificultad: ${getDifficultyName()}`;
     victoryModal.classList.add('active');
 }
 
-//-Inicializar juego-
+//Inicializar juego
 function initializeGame() {
     //validar nombre
     const name = playerNameInput.value.trim();
@@ -231,7 +231,7 @@ function initializeGame() {
     return true;
 }
 
-//-reiniciar juego-
+//reiniciar juego
 function restartGame() {
     if (gameState.timeoutId) {
         clearTimeout(gameState.timeoutId);
@@ -246,7 +246,7 @@ function restartGame() {
     board.classList.remove('blocked');
 }
 
-// -Event Listeners-
+//Event Listeners
 startBtn.addEventListener('click', initializeGame);
 
 restartBtn.addEventListener('click', restartGame);
